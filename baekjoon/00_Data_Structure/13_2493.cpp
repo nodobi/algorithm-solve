@@ -8,13 +8,9 @@ struct Tower{
     Tower(int _number, int _height) : number(_number), height(_height) {}
 };
 int main() {
-    // ios::sync_with_stdio(false); cin.tie(NULL);
+    ios::sync_with_stdio(false); cin.tie(NULL);
     int N{0};
     cin >> N;
-
-    int heights[N + 1], received[N + 1];
-    heights[1] = 0;
-    received[1] = 0;
 
     stack<Tower> s;
 
