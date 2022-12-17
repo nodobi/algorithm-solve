@@ -22,7 +22,7 @@ int main() {
         axis[x + r + MIDDLE] = i;
     }
 
-    stack<int> s;
+    stack<int> s;x1
     for(int i{0}; i < MIDDLE * 2; i++) {
         int tmp{axis[i]};
 
