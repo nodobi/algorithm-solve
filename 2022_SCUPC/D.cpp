@@ -3,22 +3,21 @@
 using namespace std;
 
 int main() {
+    ios::sync_with_stdio(false); cin.tie(NULL);
     int N{0};
+    long long ret{0};
     cin >> N;
+    unordered_map<int, long long> m;
 
-    int X[N], T[N], C[N];
-
-    map<int, int> sum;
-
-    for(int i{0}; i < N; i++) {
-        cin >> X[i] >> T[i] >> C[i];
-        sum[ T[i] - X[i] ] = sum[T[i] - X[i]] + C[i];
+    while(N--) {
+        int X{0}, T{0}, C{0};
+        cin >> X >> T >> C;
+        m[T-X] += C;
+    }
+    
+    for(auto e : m) {
+        ret = max(ret, e.second);
     }
 
-    int max{-1};
-    for(auto ele : sum) {
-        if(ele.second > max) max = ele.second;
-    }
-
-    cout << max;
+    cout << ret;
 }
